@@ -1,0 +1,15 @@
+Requirements:
+
+AUTHENTICATION:
+    -users wil log into the Source and Destination org on separate pages. The home page should display whether or not they are logged in
+
+OBJECT MAPPING:
+    -Once a user is logged in to Source, they can use 'Object Selection' button to select which objects should be migrated. 
+
+MIGRATION:
+    -Once a user is logged in to Source and Destination, they can use the 'Migration' button to trigger the migration of each object
+
+METRICS:
+
+
+

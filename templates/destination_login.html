@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                  <!-- Page Heading -->
+                  <h1 class="h3 mb-4 text-gray-800">Destination Org Login</h1>
+                  {% if session['destination_token'] %}            
+                  <h1>Logged in! Token: {{ session['destination_token'] }}</h1>
+                  {% endif %}
+
+                  <div class="row">
+
+                      <div class="col-lg-10">
+
+                          <!-- Brand Buttons -->
+                          <div class="card shadow mb-4">
+                              <div class="card-header py-3">
+                                  <h6 class="m-0 font-weight-bold text-primary">Connected App Credentials</h6>
+                              </div>
+                              <div class="card-body">
+                                  <p>In order to have access to the data in your Source Org, you'll need to create a 
+                                    Connected App in Salesforce setup. 
+                                    <a href="https://help.salesforce.com/s/articleView?id=sf.connected_app_create.htm&type=5">
+                                      Click here for more information
+                                    </a>
+                                  </p>
+                                  <p>Once you've created a Connected App, enter the 'Client Id' and 'Client Secret' in the fields below. Clicking on 'Login'
+                                    will take you to a Salesforce Login screen!
+                                  </p>
+                                  <form class="user" method="POST" id="my_form">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-user"
+                                            name="client_id" aria-describedby="emailHelp"
+                                            placeholder="Client Id">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control form-control-user"
+                                            name="client_secret" placeholder="Client Secret">
+                                    </div>
+                                    <div class="btn btn-primary btn-user btn-block">
+                                      <a href="javascript:{}" onclick="document.getElementById('my_form').submit();" class="btn btn-primary btn-user btn-block"><h6 class="m-0 font-weight-bold">Login</h6></a>
+                                      <!-- <input class="m-0 font-weight-bold" type="submit" value="Submit"/> -->
+                                    </div>
+                                    <hr>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- /.container-fluid -->  {% endblock %}
